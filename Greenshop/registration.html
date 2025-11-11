@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
     span {
         text-decoration: none;
         color: green;   
     }
 </style>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<a href="login.html">Login</a>
-<span>Registration</span>
 
-<p>Enter your email and password to register.</p>
-<form>
-  <label>Username:</label><br>
-  <input type="text" name="username" placeholder="Username"><br><br>
+  <div class="form-container">
+    <div class="form-header">
+      <a href="login.html" class="inactive">Login</a>
+      <span class="active">Register</span>
+    </div>
 
-  <label>Email:</label><br>
-  <input type="email" name="email" placeholder="Enter your email address"><br><br>
+    <p class="subtitle">Enter your email and password to register.</p>
 
-  <label>Password:</label><br>
-  <input type="password" name="password" placeholder="Password"><br><br>
+    <form>
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="email" name="email" placeholder="Enter your email address" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
 
-  <label>Confirm Password:</label><br>
-  <input type="password" name="confirm_password" placeholder="Confirm Password"><br><br>
+      <button type="submit" class="register-btn">Register</button>
+    </form>
 
-  <button type="submit">register</button>
-</form> 
-<p>Or register with</p>
-<button style="background-color: white; border-color: lightgrey;">
-    <img src="images/google.jpg" alt="google">
-    <span>Continue with Google</span>
-</button>
-<button style="background-color: white; border-color: lightgrey;">
-    <img src="images/fb.jpg" alt="fb">
-    <span>Continue with Facebook</span>
-</button>
+    <div class="divider">
+      <span>Or register with</span>
+    </div>
+
+    <button class="social-btn">
+      <img src="images/google.jpg" alt="Google">
+      Continue with Google
+    </button>
+
+    <button class="social-btn">
+      <img src="images/fb.jpg" alt="Facebook">
+      Continue with Facebook
+    </button>
+  </div>
+
 </body>
 </html>
