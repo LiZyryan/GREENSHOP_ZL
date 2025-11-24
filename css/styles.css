@@ -1,0 +1,397 @@
+
+@font-face {
+  font-family: 'CeraPro';
+  src: url('../fonts/CeraPro-Regular.woff2') format('woff2'),
+       url('../fonts/CeraPro-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CeraPro';
+  src: url('../fonts/CeraPro-Bold.woff2') format('woff2'),
+       url('../fonts/CeraPro-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CeraPro';
+  src: url('../fonts/CeraPro-Light.woff2') format('woff2'),
+       url('../fonts/CeraPro-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+body {
+  background: white;
+  font-family: 'CeraPro', Arial, sans-serif;
+  color: #3d3d3d;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 50px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.gslogo {
+  height: auto;
+  width: 200px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #46a358;
+}
+
+.menu li a.active {
+  font-weight: 700;
+  color: #46a358;
+  border-bottom: 3px solid #46a358;
+  padding-bottom: 3px;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #46a358;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #3b8a4c;
+}
+
+.b_login {
+  width: 18px;
+  height: 18px;
+}
+
+.section {
+  padding: 50px;
+  overflow: hidden;
+}
+
+.mtext {
+  float: left;
+  width: 48%;
+  padding-top: 50px;
+}
+
+.mpic {
+  float: right;
+  width: 48%;
+}
+
+.welcome {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3d3d3d;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.better {
+  font-size: 70px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: capitalize;
+  color: #3d3d3d;
+  margin-bottom: 15px;
+}
+
+.better span {
+  color: #46a358;
+}
+
+.mtext > p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #727272;
+  font-weight: 400;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.shop-btn {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'CeraPro', sans-serif;
+  text-transform: uppercase;
+  background-color: #46a358;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-btn:hover {
+  background-color: #3b8a4c;
+}
+
+.plant {
+  width: 100%;
+  height: auto;
+}
+
+.catalog {
+  padding: 50px;
+  overflow: hidden;
+}
+
+.sidebar {
+  float: left;
+  width: 23%;
+  padding-right: 30px;
+  min-height: 800px;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #3d3d3d;
+}
+
+.categories {
+  list-style: none;
+  padding: 20px 15px;
+  margin: 0 0 30px 0;
+  background: #fbfbfb;
+  border-radius: 8px;
+  min-height: 600px;
+}
+
+.categories li {
+  margin-bottom: 28px;
+}
+
+.categories li:last-child {
+  margin-bottom: 0;
+}
+
+.categories li a {
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 15px;
+  font-weight: 400;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.categories li a:hover {
+  color: #46a358;
+  font-weight: 600;
+}
+
+.sale-banner {
+  background: #fbfbfb;
+  padding: 0;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sale-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.products {
+  float: right;
+  width: 75%;
+  position: relative;
+}
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.product-tabs {
+  display: flex;
+  gap: 15px;
+  margin-right: auto;
+}
+
+.product-tabs {
+  display: inline-block;
+  margin-right: 60px;
+}
+
+.tab {
+  text-decoration: none;
+  font-size: 15px;
+  color: #3d3d3d;
+  padding: 5px 0;
+  position: relative;
+  transition: .2s;
+margin-right: 30px;
+}
+.tab:hover { color: #46a358; }
+.tab.active {
+color: #46a358;
+font-weight: 700;
+}
+.tab.active::after {
+content: "";
+position: absolute;
+bottom: -8px;
+left: 0;
+width: 100%;
+height: 3px;
+background: #46a358;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #3d3d3d;
+  margin-left: auto;
+}
+
+.sort select {
+  padding: 8px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  font-family: 'CeraPro', sans-serif;
+  font-size: 14px;
+  color: #3d3d3d;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  background: white;
+}
+
+.sort select:hover {
+  border-color: #46a358;
+}
+
+.product-card {
+  background: #fbfbfb;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+  width: 250px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  margin-bottom: 15px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-image img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3d3d3d;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #46a358;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
+
+.page-btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #3d3d3d;
+  font-size: 18px;
+  font-weight: 400;
+  border: 1px solid #e6e6e6;
+  border-radius: 6px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+  border-color: #46a358;
+  color: #46a358;
+}
+
+.page-btn.active {
+  background: #46a358;
+  color: white;
+  border-color: #46a358;
+  font-weight: 700;
+}
+
+.page-btn.arrow {
+  font-size: 24px;
+}
