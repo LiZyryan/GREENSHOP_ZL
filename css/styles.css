@@ -12,8 +12,8 @@ header {
 }
 
 .gslogo {
-  height: 50px;
-  width: auto;
+  height: auto;
+  width: 50px;
 }
 
 nav {
@@ -70,8 +70,6 @@ nav {
 }
 
 .section {
-  display: inline-block;
-  width: 100%;
   padding: 50px 50px;
   font-size: 0;
 }
