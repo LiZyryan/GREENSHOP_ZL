@@ -59,11 +59,10 @@ header .container {
     flex-shrink: 0;
 }
 
-nav {
+nav { 
     display: flex;
     align-items: center;
     flex: 1;
-    justify-content: space-between;
     position: relative;
 }
 
@@ -74,9 +73,8 @@ nav {
     gap: 40px;
     margin: 0;
     padding: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    flex-grow: 1;
+    justify-content: center;
 }
 
 .menu li {
@@ -130,6 +128,7 @@ nav {
     height: 18px;
 }
 
+/* ========== HERO SECTION (SECTION 1) ========== */
 .section {
     padding: 50px 0;
     background: linear-gradient(to right, rgba(245, 245, 245, 0.5) 0%, rgba(245, 245, 245, 0) 100%);
@@ -208,6 +207,7 @@ nav {
     max-width: 500px;
     height: auto;
 }
+
 
 .catalog {
     padding: 50px 0;
@@ -301,7 +301,7 @@ nav {
     display: flex;
     gap: 35px;
     flex: 1;
-    justify-content: center;
+    justify-content: flex-start; 
 }
 
 .tab {
@@ -338,6 +338,7 @@ nav {
     gap: 10px;
     font-size: 14px;
     color: #3d3d3d;
+    flex-shrink: 0;
 }
 
 .sort select {
@@ -368,11 +369,14 @@ nav {
     display: flex;
     flex-direction: column;
     text-align: left;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, border-top 0.3s ease;
+    position: relative;
+    box-shadow: none; 
 }
 
 .product-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    border-top: 3px solid #46a358;
 }
 
 .product-image {
@@ -387,7 +391,7 @@ nav {
     position: relative; 
 }
 
-.product-image > img:not(.discount-badge-img) {
+.product-image > img {
     max-width: 100%;
     max-height: 100%;
     height: auto;
@@ -395,19 +399,37 @@ nav {
     transition: transform 0.3s ease; 
 }
 
-.product-card:hover .product-image > img:not(.discount-badge-img) {
+.product-card:hover .product-image > img {
     transform: scale(1.05);
 }
 
-.discount-badge-img {
+/* ОНОВЛЕНИЙ СТИЛЬ: Прямокутний значок знижки */
+.discount-badge {
     position: absolute;
     top: 15px;
     left: 0;
-    width: 70px; 
-    height: auto;
+    
+    /* Розмір та форма */
+    min-width: 60px; 
+    padding: 5px 10px; 
+    border-radius: 0 6px 6px 0; 
+    
+    /* Колір та текст */
+    background-color: #46a358; 
+    color: white;
+    font-size: 13px; 
+    font-weight: 700;
+    
+    /* Центрування тексту */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    
     z-index: 10;
-    display: block;
 }
+
 
 .product-actions {
     position: absolute;
@@ -449,8 +471,6 @@ nav {
     bottom: 20px; 
 }
 
-
-
 .product-name {
     font-size: 16px;
     font-weight: 400;
@@ -473,14 +493,14 @@ nav {
 }
 
 .page-btn {
-    width: 45px;
-    height: 45px;
+    width: 35px; 
+    height: 35px; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: #3d3d3d;
-    font-size: 18px;
+    font-size: 16px; 
     font-weight: 400;
     border: 1px solid #e6e6e6;
     border-radius: 6px;
@@ -501,7 +521,7 @@ nav {
 }
 
 .page-btn.arrow {
-    font-size: 24px;
+    font-size: 20px; 
 }
 
 .link-arrow {
@@ -530,33 +550,8 @@ nav {
     gap: 10px;
 }
 
-.link-arrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 9px 20px;
-    background: #46a358;
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 500;
-    transition: background-color 0.3s ease, gap 0.3s ease;
-    position: relative;
-}
 
-.link-arrow::after {
-    content: "→";
-    font-size: 17px;
-    transition: transform 0.3s ease;
-}
-
-.link-arrow:hover {
-    background: #3b8a4c;
-    gap: 10px;
-}
-
-
+/* === FEATURED SECTION === */
 
 .featured-section {
     padding: 40px 0 70px 0;
@@ -577,7 +572,7 @@ nav {
     display: flex;
     align-items: center;
     width: 50%; 
-    overflow: hidden;
+    overflow: visible; 
     position: relative;
 }
 
@@ -587,17 +582,21 @@ nav {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    position: relative;
 }
 
 .featured-box .img-box img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
+    width: 100%; 
+    height: auto;
     display: block;
+    margin-top: -50px; 
+    position: relative;
+    z-index: 2; 
 }
 
 .featured-box:first-child .img-box {
     justify-content: flex-end;
+    
 }
 
 .featured-box:last-child .img-box {
@@ -629,7 +628,7 @@ nav {
 
 .featured-box .link-arrow {
     background: transparent;
-    color: #46a358;
+    color: #46a358; 
     font-weight: 500;
     font-size: 14px;
     padding: 0;
@@ -643,7 +642,9 @@ nav {
 .featured-box .link-arrow::after {
     margin-left: 4px;
     font-size: 15px;
+    color: #46a358; 
 }
+
 
 /* === BLOG SECTION === */
 
@@ -680,7 +681,6 @@ nav {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    border-radius: 12px;
     overflow: hidden;
     background: #fbfbfb;
     transition: box-shadow 0.3s ease;
@@ -699,7 +699,6 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     transition: transform 0.5s ease;
 }
 
@@ -709,18 +708,35 @@ nav {
 
 .blog-content {
     padding: 20px 15px 25px 15px;
-    flex: 1;
+    flex: 1; 
     display: flex;
     flex-direction: column;
 }
 
 .blog-meta {
     display: flex;
+    align-items: center;
     gap: 15px;
     margin-bottom: 10px;
     font-size: 14px;
     color: #46a358;
     font-weight: 500;
+}
+
+.blog-date {
+    position: relative; 
+    padding-right: 15px; 
+}
+
+.blog-date::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 5px; 
+    transform: translateY(-50%);
+    height: 12px; 
+    width: 1px; 
+    background: #46a358; 
 }
 
 .blog-title {
@@ -752,16 +768,14 @@ nav {
 
 .blog-card .link-arrow:hover {
     background: transparent;
-    color: #46a358;
+    color: #3d3d3d;
 }
 
 .blog-card .link-arrow::after {
     margin-left: 4px;
     font-size: 15px;
-    color: #46a358;
+    color: #3d3d3d; 
 }
-
-
 
 @media (max-width: 1199px) {
     .product-card {
@@ -850,6 +864,9 @@ nav {
         height: 200px;
         flex: none;
         width: 100%;
+    }
+    .featured-box .img-box img {
+        margin-top: -30px;
     }
     .blog-grid {
         flex-direction: column;
