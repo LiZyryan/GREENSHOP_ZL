@@ -127,6 +127,7 @@ nav {
     height: 18px;
 }
 
+
 .dropdown-parent {
     position: relative;
 }
@@ -134,24 +135,29 @@ nav {
 .dropdown-menu {
     list-style: none;
     margin: 0;
-    padding: 10px 0;
+    padding: 0; 
+    
     position: absolute;
-    top: 100%;
+    top: calc(100% + 40px); 
     left: 0;
-    background-color: #EDF6EE;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    background-color: #EDF6EE; 
+    border-radius: 0px;
+    box-shadow: none; 
     min-width: 180px; 
+    
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    transform: none; 
+    transition: opacity 0.3s, visibility 0.3s;
+    
     z-index: 100;
 }
 
 .dropdown-menu li {
     display: block;
     padding: 0;
+    position: relative; 
 }
 
 .dropdown-menu li a {
@@ -168,7 +174,7 @@ nav {
 .dropdown-menu li:hover > a, 
 .dropdown-menu li.active > a {
     background-color: #46a358;
-    color: #EDF6EE;
+    color: white; 
     font-weight: 500;
 }
 
@@ -186,36 +192,42 @@ nav {
     position: absolute;
     right: 15px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(0deg); 
+    content: "›"; 
     color: #3d3d3d; 
     font-size: 16px; 
     pointer-events: none;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s; 
 }
 
-.dropdown-parent.has-submenu:hover > a + .submenu-arrow {
-    color: #EDF6EE;
+.dropdown-menu li.has-submenu:hover > .submenu-arrow {
+    transform: translateY(-50%) rotate(180deg); 
+    color: white;
 }
 
 .submenu-2 {
     list-style: none;
     margin: 0;
-    padding: 10px 0;
+    padding: 0;
+    
     position: absolute;
-    top: 0; 
+    top: -102px; 
     left: 100%;
-    background-color: #EDF6EE;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    background-color: #EDF6EE; 
+    border-radius: 0px;
+    box-shadow: none; 
     min-width: 180px; 
+
     opacity: 0;
     visibility: hidden;
-    transform: translateX(10px);
-    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    transform: none; 
+    transition: opacity 0.3s, visibility 0.3s;
+    
     z-index: 110;
 }
 
-.dropdown-parent.has-submenu:hover > .submenu-2 {
+.dropdown-menu li.has-submenu:hover > .submenu-2 {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
@@ -232,8 +244,9 @@ nav {
 }
 
 .submenu-2 li:hover > a {
-    background-color: #e8f5e9;
-    color: #46a358;
+    background-color: #46a358;
+    color: white; 
+    font-weight: 500;
 }
 
 .dropdown-menu li.has-submenu:hover > a {
@@ -882,13 +895,13 @@ nav {
 
 .blog-card .link-arrow:hover {
     background: transparent;
-    color: #3d3d3d;
+    color: #46a358;
 }
 
 .blog-card .link-arrow::after {
     margin-left: 4px;
     font-size: 15px;
-    color: #3d3d3d; 
+    color: #46a358; 
 }
 
 
