@@ -1,6 +1,3 @@
-/* ======================================= */
-/* 0. Шрифты и Базовые стили */
-/* ======================================= */
 
 @font-face {
     font-family: 'CeraPro';
@@ -46,9 +43,6 @@ a {
     color: inherit;
 }
 
-/* ======================================= */
-/* 1. HEADER (Навигация) */
-/* ======================================= */
 
 header {
     border-bottom: 1px solid #e6e6e6;
@@ -126,7 +120,6 @@ nav {
     height: 18px;
 }
 
-/* --- СТИЛІ ДЛЯ DROPDOWN --- */
 .dropdown-parent {
     position: relative;
 }
@@ -252,12 +245,6 @@ nav {
     background-color: #46a358;
     color: white;
 }
-/* --- КІНЕЦЬ СТИЛІВ DROPDOWN --- */
-
-
-/* ======================================= */
-/* 2. MAIN (Герой-секция) */
-/* ======================================= */
 
 .section {
     padding: 50px 0;
@@ -333,9 +320,6 @@ nav {
     height: auto;
 }
 
-/* ======================================= */
-/* 3. CATALOG (Сайдбар и продукты) */
-/* ======================================= */
 
 .catalog {
     padding: 50px 0;
@@ -538,7 +522,6 @@ nav {
     z-index: 10;
 }
 
-/* ИСПРАВЛЕННЫЙ ХОВЕР ДЕЙСТВИЙ (Корзина, Сердце и т.д.) */
 .product-actions {
     position: absolute;
     bottom: 0;
@@ -552,8 +535,6 @@ nav {
     z-index: 10;
 }
 
-/* ... (код выше без изменений) ... */
-
 .action-icon {
     width: 35px;
     height: 35px;
@@ -565,7 +546,6 @@ nav {
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     
-    /* ДОБАВЛЕНО: Прозрачная обводка по умолчанию */
     border: 2px solid transparent; 
     transition: all 0.3s ease; 
     padding: 5px;
@@ -579,19 +559,18 @@ nav {
     transition: filter 0.3s;
 }
 
-/* НОВЫЙ ЭФФЕКТ ХОВЕРА: Только зеленая обводка */
+
 .action-icon:hover {
-    background: white; /* Оставляем фон белым */
+    background: white; 
     transform: scale(1.08); 
-    border-color: #46a358; /* Зеленая обводка */
+    border-color: #46a358; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
 }
 
 .action-icon:hover img {
-    /* УДАЛЕНО: Фильтр для изменения цвета иконки */
     filter: none; 
 }
-/* КОНЕЦ НОВОГО ЭФФЕКТА */
+
 .product-card:hover .product-actions {
     opacity: 1;
     visibility: visible;
@@ -673,12 +652,6 @@ nav {
     transition: transform 0.3s ease;
 }
 
-
-/* ======================================= */
-/* 4. CTA & FEATURED (Градиент и блоки с картинками) */
-/* ======================================= */
-
-/* --- СТИЛІ ГРАДІЄНТНОГО CTA БЛОКУ --- */
 .gradient-cta {
     padding: 70px 0; 
     text-align: center;
@@ -727,7 +700,6 @@ nav {
     color: white; 
     border-color: #3b8a4c;
 }
-/* --- КІНЕЦЬ СТИЛІВ ГРАДІЄНТНОГО CTA БЛОКУ --- */
 
 
 .featured-section {
@@ -790,7 +762,7 @@ nav {
     max-width: 250px;
 }
 
-/* ИСПРАВЛЕННЫЙ СТИЛЬ: "Find More" как зеленая кнопка */
+
 .featured-box .link-arrow {
     background: #46a358; 
     color: white; 
@@ -811,11 +783,6 @@ nav {
     color: white;
     transition: transform 0.3s ease;
 }
-/* КОНЕЦ ИСПРАВЛЕННОГО СТИЛЯ */
-
-/* ======================================= */
-/* 5. BLOG (Блог-секция) */
-/* ======================================= */
 
 .blog-section {
     padding: 0 0 100px 0;
@@ -940,11 +907,6 @@ nav {
     color: #46a358;
 }
 
-
-/* ======================================= */
-/* 6. FOOTER */
-/* ======================================= */
-
 .footer-info {
     padding: 40px 0;
     border-bottom: 1px solid #e6e6e6;
@@ -967,7 +929,6 @@ nav {
     position: relative; 
 }
 
-/* ОРИГИНАЛЬНАЯ ЛОГИКА РАЗДЕЛИТЕЛЕЙ */
 .info-box:nth-child(1)::after,
 .info-box:nth-child(2)::after {
     content: "";
@@ -1136,7 +1097,6 @@ nav {
     margin: 0;
 }
 
-/* КОНТАКТЫ: ИСПРАВЛЕНИЕ ПЕРЕНОСОВ И ХОВЕРА */
 .no-wrap {
     white-space: nowrap;
 }
@@ -1149,8 +1109,6 @@ nav {
 .contact-item-bar a:hover {
     color: #46A358;
 }
-/* КОНЕЦ ИСПРАВЛЕНИЯ */
-
 
 .footer-main-section {
     background-color: #FBFBFB;
@@ -1259,12 +1217,6 @@ nav {
     margin: 0;
 }
 
-
-
-/* ======================================= */
-/* 7. MEDIA QUERIES (Адаптивность) */
-/* ======================================= */
-
 @media (max-width: 1199px) {
     .menu {
         gap: 25px;
@@ -1324,13 +1276,12 @@ nav {
         gap: 20px;
     }
 
-    /* ИСПРАВЛЕННЫЕ СТИЛИ для info-box (2x2) */
     .footer-info-grid {
         flex-wrap: wrap;
         gap: 30px;
     }
     .info-box {
-        flex: 0 0 calc(50% - 15px); /* Учитываем gap в 30px */
+        flex: 0 0 calc(50% - 15px); 
         padding-bottom: 20px;
         border-bottom: 1px solid #EAEAEA;
         padding-right: 15px;
@@ -1338,19 +1289,18 @@ nav {
     }
 
     .info-box::after {
-        content: none !important; /* Сброс вертикальных разделителей для всех */
+        content: none !important; 
     }
     .info-box:nth-child(odd):not(:nth-last-child(-n+2)) {
-        border-right: 1px solid #EAEAEA; /* Разделитель справа для нечетных (кроме двух последних) */
+        border-right: 1px solid #EAEAEA; 
     }
     .info-box:nth-last-child(-n+2) {
-        border-bottom: none; /* Убираем нижний разделитель у двух последних */
+        border-bottom: none; 
         padding-bottom: 0;
     }
     .info-box:nth-child(even) {
         border-right: none;
     }
-    /* КОНЕЦ ИСПРАВЛЕННЫХ СТИЛЕЙ 2x2 */
     
     .newsletter-box {
         flex: 0 0 100%;
@@ -1410,7 +1360,7 @@ nav {
     header .container {
         gap: 15px;
     }
-    /* Стили для мобильного меню (бургер) */
+
     .menu {
         display: none; 
         flex-direction: column;
@@ -1490,7 +1440,6 @@ nav {
         height: 200px;
     }
 
-    /* АДАПТИВНЫЕ СТИЛИ DROPDOWN */
     .dropdown-menu, .submenu-2 {
         position: static;
         opacity: 1;
@@ -1527,7 +1476,6 @@ nav {
         color: #46a358;
         font-weight: 700;
     }
-    /* КОНЕЦ АДАПТИВНЫХ СТИЛОВ DROPDOWN */
     
 
     .featured-box {
@@ -1558,8 +1506,6 @@ nav {
         max-width: 500px;
         margin: 0 auto;
     }
-
-    /* Правила info-box (1x4) */
     .footer-info-grid {
         flex-direction: column;
         gap: 20px;
@@ -1583,7 +1529,6 @@ nav {
     .newsletter-box h3 {
         text-align: left;
     }
-    /* Кінець правил info-box */
 
     .footer-col, .social-col {
         flex: 0 0 calc(50% - 20px);
@@ -1700,4 +1645,5 @@ nav {
     .newsletter-box h3 {
         text-align: left;
     }
+
 }
