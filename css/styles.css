@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'CeraPro';
     src: url('../fonts/CeraPro-Light.woff2') format('woff2'), url('../fonts/CeraPro-Light.woff') format('woff');
@@ -83,7 +84,7 @@ header .container {
     .gslogo { width: 200px; }
 }
 
-nav {
+nav.main-nav {
     display: flex;
     align-items: center;
     flex: 1;
@@ -154,6 +155,7 @@ nav {
     height: 18px;
 }
 
+/* --- ДРОПДАУН МЕНЮ (DESKTOP) --- */
 .dropdown-parent {
     position: relative;
 }
@@ -163,7 +165,7 @@ nav {
     margin: 0;
     padding: 0; 
     position: absolute;
-    top: calc(100% + 28px); 
+    top: calc(100% + 38px); 
     left: 0;
     background-color: #EDF6EE; 
     border-radius: 0px;
@@ -171,8 +173,8 @@ nav {
     min-width: 180px; 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px); 
-    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
     z-index: 100;
 }
 
@@ -211,6 +213,7 @@ nav {
     position: relative;
 }
 
+/* СТРЕЛКА */
 .submenu-arrow {
     position: absolute;
     right: 15px;
@@ -224,16 +227,17 @@ nav {
 }
 
 .dropdown-menu li.has-submenu:hover > .submenu-arrow {
-    transform: translateY(-50%) rotate(-90deg); 
+    transform: translateY(-50%) rotate(-90deg); /* На десктопе поворот вверх/вправо */
     color: white;
 }
 
+/* ВЛОЖЕННОЕ МЕНЮ (PRIMING) - DESKTOP */
 .submenu-2 {
     list-style: none;
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 0; 
+    top: -100px; 
     left: 100%;
     background-color: #EDF6EE; 
     border-radius: 0px;
@@ -283,6 +287,7 @@ nav {
     padding: 0;
     z-index: 1100;
     margin-left: 20px;
+    transition: transform 0.3s ease;
 }
 .hamburger span {
     width: 25px;
@@ -291,10 +296,14 @@ nav {
     display: block;
     transition: all 0.3s ease;
 }
+.hamburger:hover span {
+    background-color: #46a358;
+}
 
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
 
 .section {
     padding: 50px 0;
@@ -372,7 +381,6 @@ nav {
     height: auto;
     object-fit: contain;
 }
-
 
 .catalog {
     padding: 50px 0;
@@ -533,7 +541,6 @@ nav {
 .custom-checkbox:hover .count {
     color: #46A358;
 }
-
 
 .products {
     flex: 1;
@@ -806,7 +813,7 @@ nav {
     transition: transform 0.3s ease;
 }
 
-
+/* GRADIENT CTA */
 .gradient-cta {
     padding: 70px 0; 
     text-align: center;
@@ -849,6 +856,7 @@ nav {
     border-color: #3b8a4c;
 }
 
+/* FEATURED SECTION */
 .featured-section {
     padding: 40px 0 70px 0;
 }
@@ -929,7 +937,6 @@ nav {
     color: white;
     transition: transform 0.3s ease;
 }
-
 
 .blog-section {
     padding: 0 0 100px 0;
@@ -1054,8 +1061,7 @@ nav {
     color: #46a358;
 }
 
-/* --- ИСПРАВЛЕННЫЙ БЛОК С ИКОНКАМИ В ФУТЕРЕ --- */
-
+/* FOOTER */
 .footer-info {
     padding: 40px 0;
     border-bottom: 1px solid #e6e6e6;
@@ -1103,11 +1109,20 @@ nav {
     background-position: center;
     background-size: 60%; 
 }
-.bg-garden { background-image: url('../images/icon03.svg'); 
-background-size: 45%}
-.bg-renovation { background-image: url('../images/icon04.svg');
-background-size: 45% }
-.bg-watering { background-image: url('../images/icon5.svg'); }
+
+/* ИКОНКИ SVG и размеры */
+.bg-garden { 
+    background-image: url('../images/icon03.svg'); 
+    background-size: 45%; 
+}
+.bg-renovation { 
+    background-image: url('../images/icon04.svg'); 
+    background-size: 45%; 
+}
+.bg-watering { 
+    background-image: url('../images/icon5.svg'); 
+    background-size: 60%; 
+}
 
 .icon-wrapper::before {
     content: "";
@@ -1387,6 +1402,7 @@ background-size: 45% }
     border-top: 1px solid #EAEAEA;        
 }
 
+/* PRELOADER */
 .preloader {
     position: fixed;
     top: 0;
@@ -1420,7 +1436,6 @@ background-size: 45% }
     100% { opacity: 0; visibility: hidden; }
 }
 
-/* МЕДИА-ЗАПРОСЫ */
 
 @media (max-width: 1199px) {
     .container {
@@ -1496,9 +1511,20 @@ background-size: 45% }
     .sale-banner img { width: 100%; height: auto; object-fit: contain; }
 
     .better { font-size: 55px; }
-    .featured-row { flex-direction: column; gap: 100px; }
-    .featured-box { width: 100%; padding-bottom: 20px; }
-    .featured-box .img-box { flex: 0 0 300px; height: auto; }
+    
+    .featured-row { 
+        flex-direction: column; 
+        gap: 30px; 
+    }
+    .featured-box { 
+        width: 100%; 
+        padding: 30px 20px; 
+        box-sizing: border-box;
+    }
+    .featured-box .img-box { 
+        flex: 0 0 40%; 
+        height: auto; 
+    }
 
     .products { width: 100%; }
     .product-grid { gap: 20px; }
@@ -1510,42 +1536,135 @@ background-size: 45% }
     .footer-gradient-bar .container { align-items: flex-start; }
 }
 
+
 @media (max-width: 991px) {
-    .hamburger { display: flex; }
+    .hamburger { display: flex; z-index: 1001; }
     .login-btn { margin-left: auto; margin-right: 15px; }
 
-    .menu {
+    .main-nav {
         position: absolute;
         top: 100%; 
         left: 0;
         width: 100%;
-        background: white;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        z-index: 999;
+        background-color: #fff;
+        border-top: 1px solid #f0f0f0;
         max-height: 0;
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.4s ease;
+        transition: all 0.5s ease-in-out;
+        z-index: 1000;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        display: block; 
     }
-    .menu.active {
-        max-height: 500px;
+
+    .main-nav.active {
+        max-height: 100vh; 
         opacity: 1;
         visibility: visible;
-        padding: 20px 0;
-        display: flex; 
+        overflow-y: auto; 
+        padding-bottom: 20px;
     }
-    .menu li { width: 100%; }
-    .menu li a { 
-        padding: 12px 20px; 
-        width: 100%; 
-        border-bottom: 1px solid #f0f0f0;
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        gap: 0;
+    }
+
+    .menu li {
+        width: 100%;
+        margin: 0;
+        position: relative; 
+    }
+
+    .menu li a {
         display: block;
+        padding: 15px 20px;
+        font-size: 16px;
+        border-bottom: 1px solid #f9f9f9;
+        width: 100%;
+        color: #3d3d3d !important;
+        background: transparent !important;
     }
+    
     .menu li a.active::after { display: none; } 
+
+    .dropdown-menu {
+        position: static; 
+        width: 100%;
+        background-color: #fff;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .submenu-2 {
+        position: relative; 
+        top: 0; left: 0;
+        width: 100%;
+        background-color: #EDF6EE !important;  
+        box-shadow: inset 0 3px 6px rgba(0,0,0,0.05);
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out; 
+        z-index: 1;
+    }
+
+    .dropdown-menu li.has-submenu:hover > .submenu-2 {
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .dropdown-menu li.has-submenu.open > .submenu-2 {
+        max-height: 1000px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .submenu-arrow {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        font-size: 18px;
+        transform: translateY(-50%) rotate(90deg); 
+        color: #3d3d3d !important;
+        pointer-events: none;
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    .submenu-2 li a,
+    .dropdown-menu li a {
+        padding-left: 40px; 
+        font-size: 14px;
+        border-bottom: none;
+        color: #3d3d3d !important;
+        background: transparent !important;
+        font-weight: 400 !important;
+        text-decoration: none !important;
+    }
+
+    .dropdown-menu li.has-submenu.open > a {
+        background-color: #46a358 !important;
+        color: #ffffff !important;
+        font-weight: 500 !important;
+    }
+
+    .dropdown-menu li.has-submenu.open > .submenu-arrow,
+    .dropdown-menu li.has-submenu.open > a .submenu-arrow {
+        transform: translateY(-50%) rotate(-90deg); 
+        color: #ffffff !important;
+    }
 
     .section .container {
         flex-direction: column-reverse; 
@@ -1719,7 +1838,7 @@ background-size: 45% }
         display: flex;
         justify-content: center; 
         height: auto; 
-        order: -1;         
+        order: -1;        
         margin-top: -30px;  
         margin-bottom: 10px; 
     }
